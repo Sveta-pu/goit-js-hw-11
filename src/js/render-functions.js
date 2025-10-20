@@ -14,12 +14,12 @@ function buildGalleryMarkup(images) {
     .map(item => {
       return `
         <li class="gallery-item">
-          <a href="${item.largeImageURL}">
+          <a class="gallery-image" href="${item.largeImageURL}">
             <img src="${item.webformatURL}" alt="${item.tags}" />
           </a>
           <div class="info">
-            <p><b>Likes:</b> ${item.likes}</p>
-            <p><b>Views:</b> ${item.views}</p>
+            <p ><b>Likes:</b> ${item.likes}</p>
+            <p ><b>Views:</b> ${item.views}</p>
             <p><b>Comments:</b> ${item.comments}</p>
             <p><b>Downloads:</b> ${item.downloads}</p>
           </div>
