@@ -51,5 +51,6 @@ form.addEventListener('submit', async ev => {
     });
   } finally {
     hideLoader();
+    input.value = '';
   }
 });
