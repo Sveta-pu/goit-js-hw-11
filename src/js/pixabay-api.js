@@ -1,7 +1,3 @@
-// У файлі pixabay-api.js зберігай функції для виконання HTTP-запитів:
-
-// getImagesByQuery(query). Ця функція повинна приймати один параметр query (пошукове слово, яке є рядком), здійснювати
-//  HTTP-запит і повертати значення властивості data з отриманої відповіді.
 import axios from 'axios';
 
 const BASE_URL = 'https://pixabay.com/api/';
@@ -15,14 +11,13 @@ async function getImagesByQuery(query) {
     `&orientation=horizontal` +
     `&safesearch=true`;
 
-  return axios
-    .get(url)
-    .then(response => {
-      return response.data;
-    })
-    .catch(error => {
-      return [];
-    });
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching imeges:', error);
+    throw error;
+  }
 }
 
 export default getImagesByQuery;

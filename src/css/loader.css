@@ -30,6 +30,9 @@
   animation-delay: 0s;
 }
 
-.hidden {
+.loader {
   display: none;
+}
+.loader.is-visible {
+  display: block;
 }
